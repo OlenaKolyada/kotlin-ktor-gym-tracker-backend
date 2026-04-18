@@ -2,6 +2,7 @@
 
 # Kotlin
 kotlin = "2.3.0"
+kotlinx-datetime = "0.6.1"
 
 # Ktor
 ktor = "3.4.2"
@@ -28,6 +29,10 @@ binaryCompatibilityValidator = "0.13.2"
 openapiGenerator = "7.13.0"
 
 [libraries]
+
+# Kotlin
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+
 # Ktor Server
 ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
