@@ -10,8 +10,8 @@ internal class BuildPluginJvm : Plugin<Project> {
 
     override fun apply(project: Project) = with(project) {
         pluginManager.apply("org.jetbrains.kotlin.jvm")
-//        group = rootProject.group
-//        version = rootProject.version
+        group = rootProject.group
+        version = rootProject.version
         repositories {
             mavenCentral()
         }

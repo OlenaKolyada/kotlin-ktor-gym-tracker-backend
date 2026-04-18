@@ -24,8 +24,10 @@ plugins {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
+include(":http")
+include(":infra")
+include(":openapi")
 include(":feature:analytics")
 include(":feature:catalog")
-include(":openapi")
 include(":feature:workout")
 include(":feature:user")
