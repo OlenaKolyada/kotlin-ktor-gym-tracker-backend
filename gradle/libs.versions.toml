@@ -23,6 +23,9 @@ mockk = "1.13.17"
 junit = "5.12.1"
 h2 = "2.3.232"
 
+# Plugins
+binaryCompatibilityValidator = "0.13.2"
+
 [libraries]
 # Ktor Server
 ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
@@ -73,6 +76,10 @@ kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
 h2 = { module = "com.h2database:h2", version.ref = "h2" }
+
+# Plugins
+plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+plugin-binaryCompatibilityValidator = { module = "org.jetbrains.kotlinx:binary-compatibility-validator", version.ref = "binaryCompatibilityValidator" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
