@@ -9,9 +9,9 @@ application {
     mainClass = "io.ktor.server.netty.EngineMain"
 }
 
-kotlin {
-    jvmToolchain(23)
-}
+//kotlin {
+//    jvmToolchain(23)
+//}
 
 dependencies {
     implementation(libs.ktor.server.call.logging)
