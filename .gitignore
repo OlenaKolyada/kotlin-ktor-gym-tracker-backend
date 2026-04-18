@@ -43,3 +43,4 @@ docker-compose.override.yml
 .DS_Store
 *.log
 *.tmp
+sample/
