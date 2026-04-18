@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.ktor) apply false
     alias(libs.plugins.kotlin.plugin.serialization) apply false
+    alias(libs.plugins.openapi.generator) apply false
 }
 
 group = "com.funkycorgi.funkytap"
@@ -11,8 +12,8 @@ subprojects {
     group = rootProject.group
     version = rootProject.version
 }
-
-ext {
-    val specDir = layout.projectDirectory.dir("specs")
-    set("spec-funkytap-api", specDir.file("spec-funkytap-api.yaml").toString())
-}
+//
+//ext {
+//    val specDir = layout.projectDirectory.dir("specs")
+//    set("spec-funkytap-api", specDir.file("spec-funkytap-api.yaml").toString())
+//}

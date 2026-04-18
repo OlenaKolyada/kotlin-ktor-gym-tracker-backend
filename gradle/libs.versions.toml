@@ -25,6 +25,7 @@ h2 = "2.3.232"
 
 # Plugins
 binaryCompatibilityValidator = "0.13.2"
+openapiGenerator = "7.13.0"
 
 [libraries]
 # Ktor Server
@@ -85,3 +86,4 @@ plugin-binaryCompatibilityValidator = { module = "org.jetbrains.kotlinx:binary-c
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+openapi-generator = { id = "org.openapi.generator", version.ref = "openapiGenerator" }
