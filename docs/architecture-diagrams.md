@@ -7,4 +7,4 @@
 <img src="img/c4-container.svg" alt="C4 Container Diagram" width="800">
 
 ## C4 Component Diagram
-<img src="img/c4-component.svg" alt="C4 Component Diagram" width="800">
+<img src="img/c4-component.svg" alt="C4 Component Diagram" width="1200">
