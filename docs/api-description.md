@@ -26,9 +26,15 @@
 | userId | Identifier of the gym club owner | "018f4a2c-9b2e-7f4a-9c8a-2a7f4b91c123" |
 | title | Gym club name | "Basic-Fit Bordeaux" |
 | pictureUrl | Gym club image URL | "https://storage.example.com/gym.png" |
-| availableTrainingItemIds | List of training items available in the gym club | ["018f4a2c-9b2e-7f4a-9c8a-2a7f4b91c125"] |
 | createdAt | Gym club creation date | "2026-04-19T10:00:00Z" |
 | updatedAt | Gym club last update date | "2026-04-19T12:00:00Z" |
+
+### GymTrainingItem
+
+| Field | Business Description | Example Value |
+|------|----------------------|---------------|
+| gymId | Gym club identifier | "018f4a2c-9b2e-7f4a-9c8a-2a7f4b91c124" |
+| trainingItemId | Training item identifier | "018f4a2c-9b2e-7f4a-9c8a-2a7f4b91c125" |
 
 ### TrainingItem
 
@@ -40,7 +46,6 @@
 | pictureUrl | Image URL | "https://storage.example.com/leg-press.png" |
 | description | Machine or exercise description | "Machine exercise for lower body strength" |
 | category | Training item category | "machine" |
-| muscleGroupIds | List of related muscle groups | ["018f4a2c-9b2e-7f4a-9c8a-2a7f4b91c126"] |
 | createdAt | Record creation date | "2026-04-19T10:00:00Z" |
 | updatedAt | Record last update date | "2026-04-19T12:00:00Z" |
 
@@ -54,6 +59,13 @@
 | pictureUrl | Image URL | "https://storage.example.com/quadriceps.png" |
 | createdAt | Record creation date | "2026-04-19T10:00:00Z" |
 | updatedAt | Record last update date | "2026-04-19T12:00:00Z" |
+
+### TrainingItemMuscleGroup
+
+| Field | Business Description | Example Value |
+|------|----------------------|---------------|
+| trainingItemId | Training item identifier | "018f4a2c-9b2e-7f4a-9c8a-2a7f4b91c125" |
+| muscleGroupId | Muscle group identifier | "018f4a2c-9b2e-7f4a-9c8a-2a7f4b91c126" |
 
 ### WorkoutSession
 

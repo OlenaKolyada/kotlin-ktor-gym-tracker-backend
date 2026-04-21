@@ -106,4 +106,5 @@ The OpenAPI contract is used for code generation and keeps the backend API expli
 
 2. Architecture and API
     1. [API Description](docs/api-description.md)
-    2. [C4 Architecture Diagrams](docs/architecture-diagrams.md)
+    2. [Data Model (ERD)](docs/data-model.md)
+    3. [C4 Architecture Diagrams](docs/architecture-diagrams.md)
