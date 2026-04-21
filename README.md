@@ -26,6 +26,7 @@ The current repository contains backend architecture planning, project documenta
 - Firebase Auth
 - OpenAPI
 - Docker
+- AWS
 
 ## Project Tools
 
@@ -99,9 +100,10 @@ The OpenAPI contract is used for code generation and keeps the backend API expli
 ## Documentation
 
 1. Product and Analysis
-    1. [Target Audience](docs/funkytap-target-audience.md)
-    2. [Functional Requirements](docs/funkytap-functional-requirements.md)
-    3. [Use Cases](docs/funkytap-use-cases.md)
+    1. [Target Audience](docs/target-audience.md)
+    2. [Functional Requirements](docs/functional-requirements.md)
+    3. [Use Cases](docs/use-cases.md)
 
 2. Architecture and API
-    1. [API Description](docs/funkytap-api-description.md)
+    1. [API Description](docs/api-description.md)
+    2. [C4 Architecture Diagrams](docs/architecture-diagrams.md)
