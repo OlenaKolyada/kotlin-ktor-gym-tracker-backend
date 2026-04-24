@@ -4,19 +4,15 @@
 
 It solves one problem: keeping track of workout progress without losing focus. Users set up their gym clubs and equipment in advance. During the workout, a single tap is enough to log completed work on a machine or exercise.
 
-The mobile application is developed as a separate React Native project. This repository contains the backend application.
+The project is in early backend development. The current repository contains backend architecture planning, project documentation, API design, and initial module structure. Implementation is in progress.
+
+[🔗 Live prototype](https://olenakolyada.github.io/kotlin-ktor-gym-tracker-backend/)
 
 ## Project Overview
 
 **FunkyTap** demonstrates the development of a Kotlin/Ktor backend for a mobile fitness application with modular monolith architecture, DDD-based feature boundaries, REST API, OpenAPI contract, PostgreSQL persistence, Firebase authentication, and CI/CD preparation.
 
 The project focuses on low cognitive load, simple workout tracking, and clear backend architecture.
-
-## Project Status
-
-The project is in early backend development.
-
-The current repository contains backend architecture planning, project documentation, API design, and initial module structure. Implementation is in progress.
 
 ## Tech Stack
 
