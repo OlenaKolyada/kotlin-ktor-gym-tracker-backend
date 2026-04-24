@@ -1,55 +1,110 @@
-# funkytap
+# FunkyTap
 
-This project was created using the [Ktor Project Generator](https://start.ktor.io).
+**FunkyTap** is a minimalist mobile app for people with ADHD who work out at the gym.
 
-Here are some useful links to get you started:
+It solves one problem: keeping track of workout progress without losing focus. Users set up their gym clubs and equipment in advance. During the workout, a single tap is enough to log completed work on a machine or exercise.
 
-- [Ktor Documentation](https://ktor.io/docs/home.html)
-- [Ktor GitHub page](https://github.com/ktorio/ktor)
-- The [Ktor Slack chat](https://app.slack.com/client/T09229ZC6/C0A974TJ9). You'll need to [request an invite](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up) to join.
+The mobile application is developed as a separate React Native project. This repository contains the backend application.
 
-## Features
+## Project Overview
 
-Here's a list of features included in this project:
+**FunkyTap** demonstrates the development of a Kotlin/Ktor backend for a mobile fitness application with modular monolith architecture, DDD-based feature boundaries, REST API, OpenAPI contract, PostgreSQL persistence, Firebase authentication, and CI/CD preparation.
 
-| Name                                                                      | Description                                                                        |
-| ---------------------------------------------------------------------------|------------------------------------------------------------------------------------ |
-| [Call Logging](https://start.ktor.io/p/call-logging)                      | Logs client requests                                                               |
-| [Call ID](https://start.ktor.io/p/callid)                                 | Allows to identify a request/call.                                                 |
-| [Request Validation](https://start.ktor.io/p/request-validation)          | Adds validation for incoming requests                                              |
-| [Authentication](https://start.ktor.io/p/auth)                            | Provides extension point for handling the Authorization header                     |
-| [Routing](https://start.ktor.io/p/routing)                                | Provides a structured routing DSL                                                  |
-| [Firebase authentication](https://start.ktor.io/p/firebase-auth-provider) | Authentication provider for Firebase Auth module                                   |
-| [Default Headers](https://start.ktor.io/p/default-headers)                | Adds a default set of headers to HTTP responses                                    |
-| [Compression](https://start.ktor.io/p/compression)                        | Compresses responses using encoding algorithms like GZIP                           |
-| [OpenAPI](https://start.ktor.io/p/openapi)                                | Serves OpenAPI documentation                                                       |
-| [kotlinx.serialization](https://start.ktor.io/p/kotlinx-serialization)    | Handles JSON serialization using kotlinx.serialization library                     |
-| [Content Negotiation](https://start.ktor.io/p/content-negotiation)        | Provides automatic content conversion according to Content-Type and Accept headers |
-| [Postgres](https://start.ktor.io/p/postgres)                              | Adds Postgres database to your application                                         |
-| [Exposed](https://start.ktor.io/p/exposed)                                | Adds Exposed database to your application                                          |
-| [Koin](https://start.ktor.io/p/koin)                                      | Provides dependency injection                                                      |
-| [Status Pages](https://start.ktor.io/p/status-pages)                      | Provides exception handling for routes                                             |
-| [Swagger](https://start.ktor.io/p/swagger)                                | Serves Swagger UI for your project                                                 |
-| [CORS](https://start.ktor.io/p/cors)                                      | Enables Cross-Origin Resource Sharing (CORS)                                       |
+The project focuses on low cognitive load, simple workout tracking, and clear backend architecture.
 
-## Building & Running
+## Project Status
 
-To build or run the project, use one of the following tasks:
+The project is in early backend development.
 
-| Task                                    | Description                                                          |
-| -----------------------------------------|---------------------------------------------------------------------- |
-| `./gradlew test`                        | Run the tests                                                        |
-| `./gradlew build`                       | Build everything                                                     |
-| `./gradlew buildFatJar`                 | Build an executable JAR of the server with all dependencies included |
-| `./gradlew buildImage`                  | Build the docker image to use with the fat JAR                       |
-| `./gradlew publishImageToLocalRegistry` | Publish the docker image locally                                     |
-| `./gradlew run`                         | Run the server                                                       |
-| `./gradlew runDocker`                   | Run using the local docker image                                     |
+The current repository contains backend architecture planning, project documentation, API design, and initial module structure. Implementation is in progress.
 
-If the server starts successfully, you'll see the following output:
+## Tech Stack
 
-```
-2024-12-04 14:32:45.584 [main] INFO  Application - Application started in 0.303 seconds.
-2024-12-04 14:32:45.682 [main] INFO  Application - Responding at http://0.0.0.0:8080
-```
+- Kotlin
+- Ktor
+- PostgreSQL
+- Firebase Auth
+- OpenAPI
+- Docker
+- AWS
 
+## Project Tools
+
+- Gradle
+- Exposed
+- Flyway
+- kotlinx.serialization
+- JUnit5
+- MockK
+
+## Architecture
+
+FunkyTap is designed as a **modular monolith** based on **Domain-Driven Design** principles.
+
+Business feature modules:
+
+- User
+- Catalog
+- Workout
+- Analytics
+
+Each feature contains its own business boundaries and follows the same internal structure:
+
+- Application
+- Domain
+- Infrastructure
+
+The presentation layer is separated into dedicated modules:
+
+- `openapi` — API contract and generated transport models
+- `http` — HTTP routing and request handling
+- `app` — application bootstrap and framework configuration
+
+The project also contains a shared infrastructure module:
+
+- `infra` — shared technical infrastructure used by backend modules
+
+## Architectural Rules
+
+- Invariants are protected inside entities through constructors.
+- Logic related to one aggregate stays inside the entity.
+- Logic involving multiple aggregates is moved to a Domain Service.
+- Orchestration, transactions, and flush are handled in Application Services.
+- Repositories only load and save data; they do not contain business logic.
+- Features communicate through interfaces.
+- The React Native frontend is a separate application in a separate repository.
+
+## API
+
+FunkyTap exposes a REST API described through OpenAPI.
+
+The API covers user accounts, gym clubs, training items, muscle groups, workout sessions, workout entries, workout summaries, goals, and analytics.
+
+The OpenAPI contract is used for code generation and keeps the backend API explicit and documented.
+
+## Main Business Features
+
+- User registration and authentication through Firebase Auth
+- User profile management
+- Gym club management
+- Shared catalog of machines and exercises
+- Muscle group catalog for machine categorization
+- Workout session creation
+- One-tap machine completion during workout
+- Latest working weight saving per machine
+- Workout completion and summary generation
+- Workout history
+- Weekly goal tracking
+- Basic workout analytics
+
+## Documentation
+
+1. Product and Analysis
+    1. [Target Audience](docs/target-audience.md)
+    2. [Functional Requirements](docs/functional-requirements.md)
+    3. [Use Cases](docs/use-cases.md)
+
+2. Architecture and API
+    1. [API Description](docs/api-description.md)
+    2. [Data Model (ERD)](docs/data-model.md)
+    3. [C4 Architecture Diagrams](docs/architecture-diagrams.md)
