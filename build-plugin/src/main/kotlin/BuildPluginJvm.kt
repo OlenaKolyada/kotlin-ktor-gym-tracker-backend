@@ -18,7 +18,7 @@ internal class BuildPluginJvm : Plugin<Project> {
             mavenCentral()
         }
         extensions.configure<KotlinJvmProjectExtension> {
-            jvmToolchain(23)
+            jvmToolchain(21)
         }
     }
 }
